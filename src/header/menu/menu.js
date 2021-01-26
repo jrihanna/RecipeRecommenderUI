@@ -1,13 +1,10 @@
 import './menu.css';
 import MenuItem from './menuItem';
 
-function Menu() {
+function Menu(props) {
   return (
-    <div className="profile-main">
-        <section>
-            <div className="profile-name">your name</div>
-        </section>
-        
+    <div className="menu-main">
+        {props.children}
     </div>
   );
 }

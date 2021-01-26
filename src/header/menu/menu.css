@@ -1,12 +1,22 @@
 .menu-main {
-    background-color: #fdea80;
-    min-height: 100vh;
-    width: 20vw;
+    background-color: #57e04b;
+    min-height: 3vh;
     display: flex;
     flex-direction: row;
-    align-items: stretch;
-    justify-content: left;
-    vertical-align: top;
-    font-size: calc(10px + 2vmin);
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 20vw;
     color: black;
   }
+
+.menu-item-main {
+    color: black;
+    background-color: blanchedalmond;
+    font-size: calc(10px + .5vmin);
+    min-width: 150px;
+    border: 1px solid;
+    cursor: pointer;
+    margin: 5px;
+}

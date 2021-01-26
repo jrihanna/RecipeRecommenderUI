@@ -1,9 +1,10 @@
 import './header.css';
 
-function Header() {
+function Header(props) {
   return (
     <div className="header-main">
-      drgdyhrtyrtyv 
+      
+      {props.children}
     </div>
   );
 }
