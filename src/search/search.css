@@ -1,0 +1,26 @@
+.search-container {
+    padding: 5px;
+    /* align-content: center; */
+    display: flex;
+    align-items: center;
+}
+
+.submit-icon {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+.submit-button {
+    width: 22px;
+    height: 22px;
+    background-image: url('../img/search_icon.svg');
+    border: 0px;
+}
+
+.search-input {
+    width: 15vw;
+    margin: 3px;
+    height: 20px;
+}

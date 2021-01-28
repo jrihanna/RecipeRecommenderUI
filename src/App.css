@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  /* padding: 10px; */
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -28,6 +29,26 @@
   color: #61dafb;
 }
 
+.Header-section {
+  position: static;
+}
+
+.Profile-section {
+  float: left;
+  height: 85vh;
+  width: 20vw;
+}
+
+.Content-section {
+  /* padding: 10px; */
+  position: absolute;
+  left: 20vw;
+  background-color: rgb(184, 244, 247);
+  width: 80vw;
+  height: 85vh;
+}
+
+/* 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +56,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

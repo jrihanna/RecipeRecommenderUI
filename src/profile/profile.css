@@ -1,15 +1,14 @@
 .profile-main {
     background-color: #fdea80;
-    min-height: 85vh;
-    width: 20vw;
+    height: inherit;
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: left;
     vertical-align: top;
     font-size: calc(10px + 2vmin);
-    padding-left: 10px;
-    padding-top: 10px;
+    /* padding-left: 10px;
+    padding-top: 10px; */
     color: black;
   }
 
