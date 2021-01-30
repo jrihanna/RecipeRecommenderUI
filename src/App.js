@@ -2,6 +2,7 @@ import './App.css';
 import Header from './header/header';
 import ProfileSection from './profile/profile-section';
 import MainContent from './content/content';
+import RecipeItem from './content/recipe/recipe';
 import Menu from './header/menu/menu';
 import MenuItem from './header/menu/menuItem';
 import AdSection from './ad/ad';
@@ -56,7 +57,8 @@ function App() {
           <MainContent>
             <Switch>
               <Route path="/Recipes">
-                <About />
+              {/* <AdSection/> */}
+                <RecipeItem />
               </Route>
               <Route path="/Ingredients">
                 <Home />
