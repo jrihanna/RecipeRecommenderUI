@@ -4,6 +4,7 @@ import ProfileSection from './profile/profile-section';
 import MainContent from './content/content';
 import Menu from './header/menu/menu';
 import MenuItem from './header/menu/menuItem';
+import AdSection from './ad/ad';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -28,30 +29,46 @@ function App() {
       <Router>
         <section className="Header-section">
           <Header>
+            <div className="Profile-container">
+              <ProfileSection />
+            </div>
+            <div>
             <Menu>
-              <Link to="/item1"><MenuItem title="item1" /></Link>
-              <Link to="/about"><MenuItem title="item2" /></Link>
+              <Link to="/Recipes"><MenuItem title="Recipes" /></Link>
+              <Link to="/Ingredients"><MenuItem title="Ingredients" /></Link>
+              <Link to="/About"><MenuItem title="About" /></Link>
             </Menu>
+            </div>
           </Header>
         </section>
         
-        <section className="Profile-section">
+        {/* <section className="Profile-section">
           <ProfileSection>
           </ProfileSection>
+        </section> */}
+
+        <section className="Search-section">
+          <Search />
         </section>
 
         <section className="Content-section">
-          <Search />
+          
           <MainContent>
             <Switch>
-              <Route path="/about">
+              <Route path="/Recipes">
                 <About />
               </Route>
-              <Route path="/item1">
+              <Route path="/Ingredients">
+                <Home />
+              </Route>
+              <Route path="/About">
                 <Home />
               </Route>
             </Switch>
           </MainContent>
+        </section>
+        <section className="Add-section">
+          <AdSection/>
         </section>
 
       </Router>

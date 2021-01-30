@@ -14,6 +14,15 @@
   }
 }
 
+input {
+  font: inherit;
+  border: 0px;
+}
+
+a {
+  font: inherit;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -31,12 +40,20 @@
 
 .Header-section {
   position: static;
+  min-height: 10vh;
 }
 
-.Profile-section {
+.Profile-container {
+  float: right;
+  height: 8vh;
+  width: 15vw;
+}
+
+.Search-section {
   float: left;
   height: 85vh;
   width: 20vw;
+  background-color: chartreuse;
 }
 
 .Content-section {
@@ -44,7 +61,15 @@
   position: absolute;
   left: 20vw;
   background-color: rgb(184, 244, 247);
-  width: 80vw;
+  width: 65vw;
+  height: 85vh;
+}
+
+.Add-section {
+  position: absolute;
+  right: 0vw;
+  background-color: rgb(245, 104, 250);
+  width: 15vw;
   height: 85vh;
 }
 
