@@ -1,5 +1,7 @@
 .header-main {
-    background-color: #ffc375;
+    background-color: #4911ee;
+    /* background-image: url('../img/bg1.png'); */
+    /* background-repeat: repeat-x; */
     min-height: 10vh;
     /* display: flex; */
     flex-direction: column;

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Popup from 'reactjs-popup';
 import RecipeDetail from './recipeDetail';
+import Nutrition from './nutrition';
 import './recipe.css';
-import 'reactjs-popup/dist/index.css';
+import '../modal.css';
 import Pizza from '../../img/pizza1.jpg';
 
 function RecipeItem(props) {
@@ -24,8 +25,8 @@ function RecipeItem(props) {
                             {close => (
                                 <div className="modal">
                                     <button className="close" onClick={close}>&times;</button>
-                                    <div>
-                                        <RecipeDetail />
+                                    <div className="content">
+                                        <RecipeDetail img={Pizza} recipeName="Pizza1"/>
                                     </div>
                                 </div>
                             )}
@@ -36,34 +37,7 @@ function RecipeItem(props) {
                     Recipe Name
                 </div>
                 <div>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Calories:
-                                </td>
-                                <td>
-                                    1231Cal
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Carbs:
-                                </td>
-                                <td>
-                                    12g
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Fat:
-                                </td>
-                                <td>
-                                    20g
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <Nutrition className="receipe-detail-detail-nutrition" />
                 </div>
             </div>
         </div>

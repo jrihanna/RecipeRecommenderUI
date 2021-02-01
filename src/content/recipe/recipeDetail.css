@@ -1,0 +1,101 @@
+.recipe-detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    /* height: 60vh; */
+}
+
+.receipe-detail-header {
+    min-width: 100px;
+    font: 18px bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 3vh;
+    text-align: center;
+    padding: 10px;
+    margin-top: -20px;
+    margin-bottom: 4px;
+    background-color:rgba(245, 245, 245, .95);
+    align-self: center;
+    border-radius: 5px;
+}
+
+.recipe-detail-big-img {
+    width: 30vw;
+    height: 25vh;
+}
+
+.receipe-detail-img-container {
+    width: 60%;
+    float: left;
+}
+
+.receipe-detail-detail-container {
+    width: 38%;
+    float: right;
+    padding-left: 3px;
+}
+
+.receipe-detail-detail-nutrition {
+    width: 100%;
+}
+
+.receipe-detail-detail-nutrition td{
+    width: 50%;
+    border-bottom: 1px groove;
+}
+
+.receipe-detail-detail-other {
+    width: 100%;
+}
+.receipe-detail-detail-other td {
+    width: 50%;
+    border-bottom: 1px groove;
+}
+
+.receipe-detail-instruction-container {
+    width: 65%;
+    float: right;
+    padding-left: 5px;
+}
+
+.receipe-detail-instruction-header {
+    color: rgb(40, 137, 218);
+    font-weight: bolder;
+}
+
+.recipe-detail-ingredients-container {
+    width: 30%;
+    float: left;
+}
+.recipe-detail-ingredients-table {
+    width: 100%;
+}
+.recipe-detail-ingredients-table td {
+    border-bottom: 1px groove;
+}
+
+.recipe-detail-button-container {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.recipe-detail-button {
+    border: 1px solid;
+    border-radius: 8px;
+    height: 40px;
+}
+
+.recipe-detail-download-button {
+    color: white;
+    background-color: rgb(211, 41, 41);
+    margin-right: 5px;
+}
+
+.recipe-detail-addtoplan-button {
+    color: white;
+    background-color: rgb(74, 37, 175);
+}
+
+.recipe-detail-divider {
+    width: 98%;
+}

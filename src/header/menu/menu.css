@@ -1,5 +1,5 @@
 .menu-main {
-    background-color: #57e04b;
+    /* background-color: #57e04b; */
     min-height: 3vh;
     display: flex;
     flex-direction: row;
@@ -7,16 +7,25 @@
     justify-content: center;
     position: absolute;
     bottom: 0;
-    left: 20vw;
-    color: black;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
   }
 
 .menu-item-main {
-    color: black;
-    background-color: blanchedalmond;
-    font-size: calc(10px + .5vmin);
-    min-width: 150px;
-    border: 1px solid;
+    /* background-color: rgb(148, 171, 248); */
+    font-size: calc(10px + 1vmin);
+    font-weight: bold;
+    /* text-decoration: wavy; */
+    min-width: 100px;
+    /* border: 1px solid; */
+    border-radius: 5px;
+    /* background-image:  */
+    /* linear-gradient(#cebffa, rgb(111, 113, 241), #cebffa); */
     cursor: pointer;
     margin: 5px;
+    padding: 8px;
+    text-align: center;
+    color: whitesmoke;
 }

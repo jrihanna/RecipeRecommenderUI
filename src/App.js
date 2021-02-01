@@ -15,6 +15,8 @@ import {
 } from "react-router-dom";
 import Search from './search/search';
 
+import Logo from './img/logo2.png';
+
 function App() {
 
   function Home() {
@@ -30,15 +32,18 @@ function App() {
       <Router>
         <section className="Header-section">
           <Header>
-            <div className="Profile-container">
-              <ProfileSection />
+            <div className="logo-container">
+              <img src={Logo} className="logo-img" />
             </div>
-            <div>
-            <Menu>
-              <Link to="/Recipes"><MenuItem title="Recipes" /></Link>
-              <Link to="/Ingredients"><MenuItem title="Ingredients" /></Link>
-              <Link to="/About"><MenuItem title="About" /></Link>
-            </Menu>
+            {/* <div className="Profile-container">
+              <ProfileSection />
+            </div> */}
+            <div className="menu-container">
+              <Menu>
+                <Link to="/Recipes" className="menu-link"><MenuItem title="Recipes" /></Link>
+                <Link to="/Ingredients" className="menu-link"><MenuItem title="Ingredients" /></Link>
+                <Link to="/About" className="menu-link"><MenuItem title="About" /></Link>
+              </Menu>
             </div>
           </Header>
         </section>
