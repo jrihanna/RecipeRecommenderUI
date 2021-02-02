@@ -2,7 +2,7 @@ import './App.css';
 import Header from './header/header';
 import ProfileSection from './profile/profile-section';
 import MainContent from './content/content';
-import RecipeItem from './content/recipe/recipe';
+import RecipeList from './content/recipe/recipeList';
 import Menu from './header/menu/menu';
 import MenuItem from './header/menu/menuItem';
 import AdSection from './ad/ad';
@@ -33,7 +33,7 @@ function App() {
         <section className="Header-section">
           <Header>
             <div className="logo-container">
-              <img src={Logo} className="logo-img" />
+              <Link to="/Home"><img src={Logo} className="logo-img" /></Link>
             </div>
             {/* <div className="Profile-container">
               <ProfileSection />
@@ -63,7 +63,10 @@ function App() {
             <Switch>
               <Route path="/Recipes">
               {/* <AdSection/> */}
-                <RecipeItem />
+                <RecipeList recipes={[{'id': '1','recipeName': 'Name1', 'img': './img/pizza1.jpg'},
+              {'id': '2', 'recipeName': 'Name2', 'img': './img/pizza1.jpg'},
+              {'id': '3','recipeName': 'Name3', 'img': './img/pizza1.jpg'},
+              {'id': '4','recipeName': 'Name4', 'img': './img/pizza1.jpg'}]}/>
               </Route>
               <Route path="/Ingredients">
                 <Home />

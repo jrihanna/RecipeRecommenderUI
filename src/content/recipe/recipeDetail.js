@@ -1,8 +1,8 @@
 import React from 'react';
 import './recipeDetail.css';
-import Nutrition from './nutrition';
+import Nutrition from '../../base/nutrition';
 import IngredientsList from './ingredientsList';
-import OtherDetails from "./otherDetails";
+import OtherDetails from "../../base/otherDetails";
 import Tag from '../../tag/tag';
 
 function RecipeDetail(props) {
@@ -15,25 +15,25 @@ function RecipeDetail(props) {
 
     return (
         <div className="recipe-detail-container">
-            <div className="receipe-detail-header">
+            <div className="recipe-detail-header">
                 {props.recipeName}
             </div>
             <div>
-                <div className="receipe-detail-img-container">
+                <div className="recipe-detail-img-container">
                     <img src={props.img} className="recipe-detail-big-img"/>
                 </div>
-                <div className="receipe-detail-detail-container">
-                    <Nutrition className="receipe-detail-detail-nutrition" />
+                <div className="recipe-detail-detail-container">
+                    <OtherDetails otherDetails={otherDetails} className="recipe-detail-detail-other"/>
                     <br/>
-                    <OtherDetails otherDetails={otherDetails} className="receipe-detail-detail-other"/>
+                    <Nutrition className="recipe-detail-detail-nutrition" />
                 </div>
             </div>
             <div>
                 <div className="recipe-detail-ingredients-container">
                     <IngredientsList ingredients={ingredients} className="recipe-detail-ingredients-table"/>
                 </div>
-                <div className="receipe-detail-instruction-container">
-                    <div className="receipe-detail-instruction-header">
+                <div className="recipe-detail-instruction-container">
+                    <div className="recipe-detail-instruction-header">
                         Recipe:
                     </div>
                     <div>

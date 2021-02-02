@@ -1,6 +1,6 @@
 import React from "react";
 import Collapsible from 'react-collapsible';
-import Nutrition from '../content/recipe/nutrition';
+import Nutrition from '../base/nutrition';
 import './search.css';
 
 function Search(props) {

@@ -5,7 +5,7 @@
     /* height: 60vh; */
 }
 
-.receipe-detail-header {
+.recipe-detail-header {
     min-width: 100px;
     font: 18px bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -20,45 +20,45 @@
 }
 
 .recipe-detail-big-img {
-    width: 30vw;
+    width: 25vw;
     height: 25vh;
 }
 
-.receipe-detail-img-container {
-    width: 60%;
+.recipe-detail-img-container {
+    width: 40%;
     float: left;
 }
 
-.receipe-detail-detail-container {
-    width: 38%;
+.recipe-detail-detail-container {
+    width: 43%;
     float: right;
     padding-left: 3px;
 }
 
-.receipe-detail-detail-nutrition {
+.recipe-detail-detail-nutrition {
     width: 100%;
 }
 
-.receipe-detail-detail-nutrition td{
+.recipe-detail-detail-nutrition td{
     width: 50%;
     border-bottom: 1px groove;
 }
 
-.receipe-detail-detail-other {
+.recipe-detail-detail-other {
     width: 100%;
 }
-.receipe-detail-detail-other td {
+.recipe-detail-detail-other td {
     width: 50%;
     border-bottom: 1px groove;
 }
 
-.receipe-detail-instruction-container {
+.recipe-detail-instruction-container {
     width: 65%;
     float: right;
     padding-left: 5px;
 }
 
-.receipe-detail-instruction-header {
+.recipe-detail-instruction-header {
     color: rgb(40, 137, 218);
     font-weight: bolder;
 }
