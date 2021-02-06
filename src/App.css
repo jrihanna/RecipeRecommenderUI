@@ -11,13 +11,13 @@
 }
 
 .logo-container {
-  width: 10vw;
+  width: 8vw;
   height: 12vh;
 }
 
 .logo-img {
   width: 100%;
-  height: inherit;
+  height: 11vh;
   margin-left: 10px;
 }
 

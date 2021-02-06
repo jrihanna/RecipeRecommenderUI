@@ -1,6 +1,7 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import Collapsible from 'react-collapsible';
-import Nutrition from '../base/nutrition';
+import Nutrition from '../../base/nutrition';
 import './search.css';
 
 function Search(props) {
@@ -19,9 +20,15 @@ function Search(props) {
     this.setState({ value: event.target.value });
   }
 
-  function handleSubmit(event) {
-    alert('An essay was submitted: ');
+  function handleSubmit2(event) {
+    // this.props.history.push('/SearchGroup');
+    props.onSubmit();
     event.preventDefault();
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    return <Redirect to="/SearchGroup" />
   }
 
   return (
@@ -84,7 +91,7 @@ function Search(props) {
         <Collapsible trigger="Make it a plan" triggerTagName="div" triggerClassName="search-trigger"
           triggerOpenedClassName="search-trigger search-header-open" open>
           <div className="search-body-section">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit2}>
               <br />
               <section>
                 <div>

@@ -23,6 +23,7 @@
     height: 40px;
     color: white;
     background-color: rgb(37, 69, 175);
+    cursor: pointer;
 }
 
 .submit-button-container {

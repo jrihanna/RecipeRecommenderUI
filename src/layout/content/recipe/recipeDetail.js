@@ -1,9 +1,9 @@
 import React from 'react';
 import './recipeDetail.css';
-import Nutrition from '../../base/nutrition';
+import Nutrition from '../../../base/nutrition';
 import IngredientsList from './ingredientsList';
-import OtherDetails from "../../base/otherDetails";
-import Tag from '../../tag/tag';
+import OtherDetails from "../../../base/otherDetails";
+import Tag from '../../../base/tag/tag';
 
 function RecipeDetail(props) {
     const ingredients = [{name:'1', amount: '1'},{name:'2', amount: '2'}]

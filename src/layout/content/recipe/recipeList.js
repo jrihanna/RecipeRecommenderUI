@@ -1,4 +1,4 @@
-import RecipeSummary from '../../base/recipeSummary';
+import RecipeSummary from '../../../base/recipeSummary';
 import './recipeContent.css';
 
 function RecipeList(props) {

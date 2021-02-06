@@ -1,5 +1,5 @@
  import './ad.css';
-import ad_icon from '../img/advertising_icon.svg'
+import ad_icon from '../../img/advertising_icon.svg'
 
 function AdSection(props) {
   return (

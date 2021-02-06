@@ -1,6 +1,6 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import RecipeDetail from '../content/recipe/recipeDetail';
+import RecipeDetail from '../layout/content/recipe/recipeDetail';
 import Nutrition from './nutrition';
 import OtherDetails from './otherDetails';
 import './recipeSummary.css';

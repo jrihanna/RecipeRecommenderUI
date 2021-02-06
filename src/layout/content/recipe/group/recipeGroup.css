@@ -1,0 +1,83 @@
+.recipe-group-trigger {  
+    background-color: #dfe6ec;
+    background-image: linear-gradient(180deg, #70f13b, rgb(239 255 236));
+    color: rgba(29, 123, 5,.98);
+    font-weight: bold;
+    font-size: calc(10px + .8vmin);
+    padding: 8px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #adfd99;
+    cursor: pointer;
+}
+
+.recipe-group-header-open {
+    background-image: linear-gradient(180deg, rgb(239 255 236), #70f13b);
+}
+
+.recipe-day-group-trigger {
+    background-image: linear-gradient(180deg, #c1f164, rgb(228 255 186));
+    color: rgba(29, 123, 5,.98);
+    font-weight: bold;
+    font-size: calc(10px + .8vmin);
+    padding: 8px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #bdec71;
+    cursor: pointer;
+}
+
+.recipe-day-group-header-open {
+    background-image: linear-gradient(180deg, rgb(228 255 186), #c1f164);
+}
+
+.recipe-group-day-group {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.recipe-group-day-content-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 15px;
+}
+
+.recipe-group-meal-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid green;
+    border-radius: 5px;
+    font-size: calc(10px + .6vmin);
+    color: #423e3e;
+    text-align: center;
+}
+
+.recipe-group-meal-title {
+    font-weight: bold;
+}
+
+.recipe-group-button-container {
+    text-align: right;
+}
+
+.recipe-group-button {
+    border: 1px solid;
+    border-radius: 8px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.recipe-group-download-button {
+    color: white;
+    background-color: rgb(211, 41, 41);
+}
+
+.recipe-group-grocery-button {
+    color: white;
+    background-color: rgb(74, 37, 175);
+}
