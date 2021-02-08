@@ -23,9 +23,9 @@ function Nutrition(props) {
                     </tr>
                 </tbody>) :
                 (<tbody>
-                    <tr><td>Calories:</td><td>1231Cal</td></tr>
-                    <tr><td>Carbs:</td><td>1231Cal</td></tr>
-                    <tr><td>Fat:</td><td>1231Cal</td></tr>
+                    <tr><td>Calories:</td><td>{props.nutrition.calory}</td></tr>
+                    <tr><td>Carbs:</td><td>{props.nutrition.carbs + 'gr'}</td></tr>
+                    <tr><td>Fat:</td><td>{props.nutrition.fat + 'gr'}</td></tr>
                 </tbody>)
             }
         </table>

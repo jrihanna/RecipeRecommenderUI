@@ -13,6 +13,8 @@ function RecipeSummary(props) {
     {'name': 'Chef', 'value' : 'Me'}, 
     {'name': 'Source', 'value': 'www'}]
 
+    const recipe = props.recipe;
+
     const img_address = props.recipeImg ? props.recipeImg : ImageNotFound;
     
     return (
@@ -21,7 +23,7 @@ function RecipeSummary(props) {
                 <div className="recipe-item-summary-container">
                     <div className="recipe-item-detail">
                         <div className="recipe-item-summary-item-container">
-                            <img src={img_address} className="recipe-item-img" />
+                            <img src={recipe.icon} className="recipe-item-img" />
                         </div>
                         <Popup
                             trigger={
@@ -33,7 +35,7 @@ function RecipeSummary(props) {
                                 <div className="modal">
                                     <button className="close" onClick={close}>&times;</button>
                                     <div className="content">
-                                        <RecipeDetail img={img_address} recipeName="Pizza1"/>
+                                        <RecipeDetail recipe={recipe}/>
                                     </div>
                                 </div>
                             )}
@@ -41,7 +43,7 @@ function RecipeSummary(props) {
                     </div>
                 </div>
                 <div className="recipe-summary-recipe-name">
-                    {props.recipe.recipeName != null ? props.recipe.recipeName : 'Recipe Name'}
+                    {recipe.name != null ? recipe.name : 'Recipe Name'}
                 </div>
                 <br/>
                 <div>

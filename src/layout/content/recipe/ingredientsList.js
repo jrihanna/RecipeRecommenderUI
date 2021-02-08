@@ -10,8 +10,8 @@ function IngredientsList(props) {
                     <tbody>
                         {props.ingredients.map((ingredient, index) => {
                             return (<tr key={'recipe-detail-ingredient' + index}>
-                                <td>{ingredient.name}</td>
-                                <td>{ingredient.amount}</td>
+                                <td>{ingredient.ingredient.name}</td>
+                                <td>{ingredient.quantity + 'gr'}</td>
                             </tr>)
                         })}
                     </tbody>

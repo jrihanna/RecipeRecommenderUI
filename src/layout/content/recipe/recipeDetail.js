@@ -13,41 +13,40 @@ function RecipeDetail(props) {
                             {'name': 'Source', 'value': 'www'}]
     const tags = [{'tagName': 'Keto'}, {'tagName':'Vegetarian'}]
 
+    const recipe = props.recipe;
+
     return (
         <div className="recipe-detail-container">
             <div className="recipe-detail-header">
-                {props.recipeName}
+                {recipe.name}
             </div>
             <div>
                 <div className="recipe-detail-img-container">
-                    <img src={props.img} className="recipe-detail-big-img"/>
+                    <img src={recipe.icon} className="recipe-detail-big-img"/>
                 </div>
                 <div className="recipe-detail-detail-container">
                     <OtherDetails otherDetails={otherDetails} className="recipe-detail-detail-other"/>
                     <br/>
-                    <Nutrition className="recipe-detail-detail-nutrition" />
+                    <Nutrition className="recipe-detail-detail-nutrition" nutrition={recipe.nutritionalValue} />
                 </div>
             </div>
             <div>
                 <div className="recipe-detail-ingredients-container">
-                    <IngredientsList ingredients={ingredients} className="recipe-detail-ingredients-table"/>
+                    <IngredientsList ingredients={recipe.ingredients} className="recipe-detail-ingredients-table"/>
                 </div>
                 <div className="recipe-detail-instruction-container">
                     <div className="recipe-detail-instruction-header">
                         Recipe:
                     </div>
                     <div>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                        magni omnis delectus nemo, maxime molestiae dolorem numquam
-                        mollitia, voluptate ea, accusamus excepturi deleniti ratione
-                        sapiente! Laudantium, aperiam doloribus. Odit, aut.
+                        {recipe.instructions}
                     </div>
                 </div>
             </div>
             <br/>
             <div>
-                {tags.map((value, index) => {
-                    return (<Tag tagName={value.tagName} key={'recipe-tag-' + index}/>)
+                {recipe.tags.map((tag, index) => {
+                    return (<Tag tagName={tag.name} key={'recipe-tag-' + index}/>)
                 })}
             </div>
             <br/><hr className="recipe-detail-divider"/>
