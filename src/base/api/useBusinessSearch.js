@@ -3,7 +3,7 @@ import * as api from './api';
 
 export function useBusinessSearch(recipeName, ingredients, tags) {
     const [recipes, setRecipes] = useState([]);
-    const [searchParams, setSearchParams] = useState({recipeName});
+    const [searchParams, setSearchParams] = useState({recipeName, ingredients, tags});
 
     useEffect(() => {
         setRecipes([]);

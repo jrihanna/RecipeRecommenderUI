@@ -1,11 +1,10 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
 import RecipeDetail from '../layout/content/recipe/recipeDetail';
-import Nutrition from './nutrition';
 import OtherDetails from './otherDetails';
 import './recipeSummary.css';
 import './modal.css';
-import ImageNotFound from '../img/img_placeholder2.png';
+import ImageNotFound from '../local_img/img_placeholder2.png';
 
 function RecipeSummary(props) {
     const otherDetails = [{'name': 'Cooking Time', 'value': '26 min'}, 
@@ -15,7 +14,7 @@ function RecipeSummary(props) {
 
     const recipe = props.recipe;
 
-    const img_address = props.recipeImg ? props.recipeImg : ImageNotFound;
+    const img_address = recipe.icon ? `/img/${recipe.icon}` : ImageNotFound;
     
     return (
         <div className="">
@@ -23,7 +22,7 @@ function RecipeSummary(props) {
                 <div className="recipe-item-summary-container">
                     <div className="recipe-item-detail">
                         <div className="recipe-item-summary-item-container">
-                            <img src={recipe.icon} className="recipe-item-img" />
+                            <img src={img_address}  className="recipe-item-img" />
                         </div>
                         <Popup
                             trigger={

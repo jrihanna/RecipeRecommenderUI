@@ -4,9 +4,7 @@ import RecipeSummary from "../../../../base/recipeSummary";
 import './recipeGroup.css';
 
 function RecipeGroup(props) {
-    const index = 1;
     const daysInWeek = [1, 2, 3, 4, 5, 6, 7];
-    const recipe={'id': '1','recipeName': 'Name123', 'img': './img/pizza1.jpg'};
 
     return (
         <div className="recipe-group-container">
@@ -14,8 +12,8 @@ function RecipeGroup(props) {
                 <button className="recipe-group-button recipe-group-grocery-button">Grocery List</button>
                 <button className="recipe-group-button recipe-group-download-button">Download PDF</button>
             </div>
-            {/* {props.recipes.map((recipe, index) => {
-                return ( */}
+            {props.recipes.map((recipe, index) => {
+                return (
             <div key={'recipe-group-week-container' + index}>
                 <Collapsible trigger="Week 1" triggerTagName="div" triggerClassName="recipe-group-trigger"
                     triggerOpenedClassName="recipe-group-trigger recipe-group-header-open">
@@ -49,9 +47,8 @@ function RecipeGroup(props) {
                     })}
 
                 </Collapsible>
-            </div>
-
-            {/* })} */}
+            </div>)
+            })}
         </div>
     );
 }

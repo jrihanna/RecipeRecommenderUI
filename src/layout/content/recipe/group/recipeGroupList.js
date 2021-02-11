@@ -1,5 +1,5 @@
 import RecipeGroup from './recipeGroup';
-import './recipeContent.css';
+import '../recipeContent.css';
 
 function RecipeGroupList(props) {
     return (

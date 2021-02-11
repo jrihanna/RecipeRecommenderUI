@@ -6,12 +6,10 @@ import OtherDetails from "../../../base/otherDetails";
 import Tag from '../../../base/tag/tag';
 
 function RecipeDetail(props) {
-    const ingredients = [{name:'1', amount: '1'},{name:'2', amount: '2'}]
     const otherDetails = [{'name': 'Cooking Time', 'value': '26 min'}, 
                             {'name': 'Cuisine', 'value': 'Iranian'}, 
                             {'name': 'Chef', 'value' : 'Me'}, 
                             {'name': 'Source', 'value': 'www'}]
-    const tags = [{'tagName': 'Keto'}, {'tagName':'Vegetarian'}]
 
     const recipe = props.recipe;
 
@@ -22,7 +20,7 @@ function RecipeDetail(props) {
             </div>
             <div>
                 <div className="recipe-detail-img-container">
-                    <img src={recipe.icon} className="recipe-detail-big-img"/>
+                    <img src={`/img/${recipe.icon}`} className="recipe-detail-big-img"/>
                 </div>
                 <div className="recipe-detail-detail-container">
                     <OtherDetails otherDetails={otherDetails} className="recipe-detail-detail-other"/>
