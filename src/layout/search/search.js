@@ -1,23 +1,38 @@
 import React from "react";
+import { useState } from 'react';
 import useReactRouter from 'use-react-router';
 import Collapsible from 'react-collapsible';
 import Nutrition from '../../base/nutrition';
 import './search.css';
 
 function Search(props) {
-  const { history } = useReactRouter();
+  const [singleListSearch, setSingleListSearch] = useState({recipeName: '', includedIngredients: [], excludedIngredients: [], tags: [], nutritions: []});
+  const [groupSearch, setGroupSearch] = useState({numWeeks: 1, excludedIngredients: [], tags: [], nutritions: []});
 
-  function handleChange(event) {
-    this.setState({ value: event.target.value });
+  function setGroupSearchNutritionalValues(params) {
+    console.log('3');
+    console.log(params);
+    setGroupSearch({...groupSearch, nutritions: params});
+    console.log(groupSearch)
+  }
+  function setListSearchNutritionalValues(params) {
+    console.log('2');
+    console.log(params);
+    setSingleListSearch({...singleListSearch, nutritions: params});
   }
 
   function handleSingleSubmit(event) {
-    history.push('/SearchSingle');
+    if (typeof props.search === 'function') {
+      props.search(singleListSearch, 'list');
+    }
     event.preventDefault();
   }
 
   function handleGroupSubmit(event) {
-    history.push('/SearchGroup');
+    console.log(groupSearch)
+    if (typeof props.search === 'function') {
+      props.search(groupSearch, 'group');
+    }
     event.preventDefault();
   }
 
@@ -30,7 +45,7 @@ function Search(props) {
             <form onSubmit={handleSingleSubmit}>
               <section>
                 <label>Recipe name:
-                  <input type="text" value="" onChange={handleChange} className="search-input search-input-normal-text" />
+                  <input type="text" onChange={(event) => setSingleListSearch({...singleListSearch, recipeName: event.target.value })} className="search-input search-input-normal-text" name="recipeName" />
                 </label>
               </section>
               <br />
@@ -38,7 +53,8 @@ function Search(props) {
                 <div>
                   <label>
                     Include ingredients:
-                    <input type="text" id="ingredient-include-single-input" className="search-input search-input-normal-text" />
+                    <input type="text" id="ingredient-include-single-input" className="search-input search-input-normal-text"
+                      onChange={(event) => setSingleListSearch({...singleListSearch, includedIngredients: event.target.value })} />
                   </label>
                   <div>List of selected Ingredients</div>
                 </div>
@@ -46,7 +62,8 @@ function Search(props) {
                 <div>
                   <label>
                     Exclude ingredients:
-                    <input type="text" id="ingredient-exclude-single-input" className="search-input search-input-normal-text" />
+                    <input type="text" id="ingredient-exclude-single-input" className="search-input search-input-normal-text"
+                      onChange={(event) => setSingleListSearch({...singleListSearch, excludedIngredients: event.target.value })} />
                   </label>
                   <div>List of selected Ingredients</div>
                 </div>
@@ -57,14 +74,16 @@ function Search(props) {
                   <Nutrition minMax inputClassName="search-input input-min-max"
                     minCaloryInputId="cal-single-min-input" maxCaloryInputId="cal-single-max-input"
                     minCarbInputId="carb-single-min-input" maxCarbInputId="carb-single-max-input"
-                    minFatInputId="fat-single-min-input" maxFatInputId="fat-single-max-input" />
+                    minFatInputId="fat-single-min-input" maxFatInputId="fat-single-max-input"
+                    handleChange={setListSearchNutritionalValues} />
                 </div>
               </section>
               <br />
               <section>
                 <label>
                   Tags:
-                    <input type="text" id="tag-single-input" className="search-input search-input-normal-text" />
+                    <input type="text" id="tag-single-input" className="search-input search-input-normal-text"
+                    onChange={(event) => setSingleListSearch({...singleListSearch, tags: event.target.value })} />
                 </label>
                 <div>List of selected Tags</div>
               </section>
@@ -85,7 +104,7 @@ function Search(props) {
               <section>
                 <div>
                   <label>How many weeks do you want to plan for?
-                    <select id="num-weeks-option" className="search-input num-weeks-select">
+                    <select id="num-weeks-option" className="search-input num-weeks-select" onChange={(event) => setGroupSearch({...groupSearch,numWeeks: event.target.value})}>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -115,7 +134,7 @@ function Search(props) {
               <br />
               <section>
                 <div>
-                  <Nutrition minMax inputClassName="search-input input-min-max"
+                  <Nutrition minMax inputClassName="search-input input-min-max" handleChange={setGroupSearchNutritionalValues}
                     minCaloryInputId="cal-group-min-input" maxCaloryInputId="cal-group-max-input"
                     minCarbInputId="carb-group-min-input" maxCarbInputId="carb-group-max-input"
                     minFatInputId="fat-group-min-input" maxFatInputId="fat-group-max-input" />

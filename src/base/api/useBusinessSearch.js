@@ -1,17 +1,19 @@
 import {useState, useEffect} from 'react';
 import * as api from './api';
 
-export function useBusinessSearch(recipeName, ingredients, tags) {
+export function useBusinessSearch(path, crit) {
     const [recipes, setRecipes] = useState([]);
-    const [searchParams, setSearchParams] = useState({recipeName, ingredients, tags});
+    const [searchParams, setSearchParams] = useState(crit);
 
     useEffect(() => {
         setRecipes([]);
         const fetchData = async () => {
             try {
-                const rawData = await api.get('/recipe/search', searchParams);
-                const resp = await rawData.json();
-                setRecipes(resp.recipes);
+                if(searchParams != null) {
+                    const rawData = await api.get(path, searchParams.searchParam);
+                    const resp = await rawData.json();
+                    setRecipes(resp.recipes);
+                }
             }
             catch(e) {
                 console.log(e);
@@ -19,6 +21,6 @@ export function useBusinessSearch(recipeName, ingredients, tags) {
         };
         fetchData();
     }, [searchParams]);
-
+    
     return [recipes, searchParams, setSearchParams];
 }

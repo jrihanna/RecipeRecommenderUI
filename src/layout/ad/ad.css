@@ -1,4 +1,6 @@
 .ad-main {
     align-items: center;
     justify-content: center;
+    border-left: 1px solid #ded3d3;
+    height: 100%;
 }

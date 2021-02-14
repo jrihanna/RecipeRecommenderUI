@@ -1,0 +1,10 @@
+.content-search-section {
+    float: left;
+    width: 22vw;
+  }
+  
+
+.content-content-section {
+    padding: 10px;
+    overflow-y: auto;
+  }

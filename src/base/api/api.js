@@ -6,8 +6,6 @@ export function get(path, queryParam) {
     //queryParam = "Cashew";//'{"name": "sfsf","ingredients":[{"ingredient":{"name":"Egg"}}],"tag": ["KETO"]}'
     const query = queryString.stringify(queryParam);
 
-    console.log(queryParam)
-    console.log(query)
     return fetch(`${RECIPE_API_BASE_URL}/${path}?${query}`, {
         headers: {
             // Authorization: 'Basic dXNlcjoxMjM=',

@@ -15,7 +15,7 @@ function App() {
       </section>
 
       <section className="Search-section">
-        <Search />
+        {/* <Search /> */}
       </section>
 
       <section className="Content-section">

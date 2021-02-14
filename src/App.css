@@ -73,14 +73,11 @@ a {
 }
 
 .Content-section {
-  padding: 10px;
   position: absolute;
-  left: 20vw;
+  /* left: 20vw; */
   /* background-color: rgb(184, 244, 247); */
-  width: 65vw;
+  width: 85vw;
   height: 85vh;
-  border-right: 1px solid #ded3d3;
-  border-left: 1px solid #ded3d3;
   overflow-y: auto;
 }
 
