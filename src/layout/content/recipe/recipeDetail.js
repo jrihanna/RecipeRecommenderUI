@@ -20,7 +20,7 @@ function RecipeDetail(props) {
             </div>
             <div>
                 <div className="recipe-detail-img-container">
-                    <img src={`/img/${recipe.icon}`} className="recipe-detail-big-img"/>
+                    <img src={`/img/${recipe.icon}`} className="recipe-detail-big-img" alt="Recipe"/>
                 </div>
                 <div className="recipe-detail-detail-container">
                     <OtherDetails otherDetails={otherDetails} className="recipe-detail-detail-other"/>

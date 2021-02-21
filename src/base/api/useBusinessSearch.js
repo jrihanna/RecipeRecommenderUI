@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import * as api from './api';
 
-export function useBusinessSearch(path, crit) {
+export function useRecipeSearch(path, crit) {
     const [recipes, setRecipes] = useState([]);
     const [searchParams, setSearchParams] = useState(crit);
 
@@ -20,7 +20,7 @@ export function useBusinessSearch(path, crit) {
             }
         };
         fetchData();
-    }, [searchParams]);
+    }, [searchParams, path]);
     
     return [recipes, searchParams, setSearchParams];
 }

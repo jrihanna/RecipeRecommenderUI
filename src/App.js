@@ -3,7 +3,6 @@ import Header from './layout/header/header';
 import MainContent from './layout/content/content';
 import AdSection from './layout/ad/ad';
 import React from "react";
-import Search from './layout/search/search';
 // import Footer from './layout/footer/footer';
 
 function App() {

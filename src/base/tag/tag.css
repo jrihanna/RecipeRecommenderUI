@@ -7,6 +7,11 @@
     padding: 2px;
     height: 4vh;
     background-color: rgba(40, 203, 252, 0.13);
+    align-items: center;
+}
+
+.tag-selectable {
+    cursor: pointer;
 }
 
 .tag-close-button {
@@ -23,4 +28,8 @@
     align-items: center;
     margin-right: 2px;
     color: rgb(56, 55, 55);
+}
+
+.tag-selected {
+    background-color: rgba(12, 159, 204, 0.453);
 }

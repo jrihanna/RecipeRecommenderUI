@@ -70,6 +70,11 @@
     margin: 5px;
 }
 
+.category-select {
+    font: inherit;
+    margin: 5px;
+}
+
 .search-header-open {
     background-color: #0c86f975;
     /* color: rgb(218, 213, 213); */
@@ -79,4 +84,8 @@
     padding: 10px;
     font-size: calc(10px + .3vmin);
     color: rgb(39, 38, 38);
+}
+
+.search-tags-container {
+    display: flex;
 }
