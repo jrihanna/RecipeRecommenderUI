@@ -1,0 +1,26 @@
+.new-recipe-input {
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(132, 190, 238);
+    width: 17vw;
+}
+
+.new-recipe-input-text {
+    margin: 2px;
+}
+
+.new-recipe-select {
+    font: inherit;
+    margin: 2px;
+    height: 24px;
+}
+
+.new-recipe-ingredient-container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.new-recipe-ingredient-remove-img {
+    margin-left: 5px;
+}
