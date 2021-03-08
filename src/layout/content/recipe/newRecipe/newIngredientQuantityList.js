@@ -7,22 +7,27 @@ function NewIngredientQuantityList(props) {
     
     const [newIngredientComponentList, setNewIngredientComponentList] = useState(generateFirstFew);
     const [newIngredientNameList, setNewIngredientNameList] = useState([]);
+    const [simpleIngredientsList, setSimpleIngredientsList] = useState([]);
     const [removeIndex, setRemoveIndex] = useState(-1);
     const [addIndex, setAddIndex] = useState(-1);
 
     useEffect(()=> {
         if(removeIndex > -1){
             setNewIngredientComponentList(newIngredientComponentList.filter(
-                item => item.key !== ("new-ingredient-container-" + removeIndex)))
+                item => item.key !== ("new-ingredient-container-" + removeIndex)));
+            
+            simpleIngredientsList.splice(removeIndex, 1);
 
             addRemoveIngredientsInParent(removeIndex)
-            setRemoveIndex(-1);
+            setRemoveIndex(-2);
         }
         if(addIndex > -1) {
             addRemoveIngredientsInParent(-1)
-            setAddIndex(-1);
+            simpleIngredientsList.push({})
+            setAddIndex(-2);
         }
-    },[newIngredientComponentList, removeIndex, addIndex]);
+    },[newIngredientComponentList, setNewIngredientComponentList, 
+        removeIndex, setRemoveIndex, addIndex, setAddIndex, simpleIngredientsList, setSimpleIngredientsList]);
 
     function generateFirstFew() {
         let initialList = [];
@@ -30,17 +35,29 @@ function NewIngredientQuantityList(props) {
             initialList.push(<NewIngredientQuantity index={i} 
                             onRemoveIngredient={removeIngredient} 
                             key={"new-ingredient-container-" + i}
-                            updateIngredient={props.onIngredientChange}
+                            updateIngredient={ingredientChange}
                         />)
         }
         return initialList;        
+    }
+
+    function ingredientChange(currentId, ingredientName, ingredientAmount, measurement) {
+        let items = simpleIngredientsList;
+        let item = items[currentId];
+        item = { ingredientName, ingredientAmount, measurement };
+        items[currentId] = item;
+        setSimpleIngredientsList(items);
+        if (typeof props.onIngredientChange === 'function') {
+            props.onIngredientChange(items)
+        }
     }
 
     function addIngredient() {
         const newIndex = newIngredientComponentList.length;
         setNewIngredientComponentList([...newIngredientComponentList,<NewIngredientQuantity index={newIndex} 
             onRemoveIngredient={removeIngredient} 
-            key={"new-ingredient-container-" + newIndex}/>]);
+            key={"new-ingredient-container-" + newIndex}
+            updateIngredient={ingredientChange}/>]);
         setNewIngredientNameList([...newIngredientNameList, newIndex])
 
         setAddIndex(1);
@@ -51,8 +68,9 @@ function NewIngredientQuantityList(props) {
     }
 
     function addRemoveIngredientsInParent(ingIndex) {
-        if (typeof props.onAddRemoveIngredient === 'function') 
-            props.onAddRemoveIngredient(ingIndex)
+        if (typeof props.onIngredientChange === 'function') {
+            props.onIngredientChange(simpleIngredientsList)
+        }
     }
 
     return (

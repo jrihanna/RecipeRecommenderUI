@@ -11,6 +11,12 @@
     margin: 2px;
 }
 
+.new-recipe-input-textarea {
+    margin: 2px;
+    width: 95%;
+    height: 20vh;
+}
+
 .new-recipe-input-number {
     margin: 2px;
     width: 7vw;

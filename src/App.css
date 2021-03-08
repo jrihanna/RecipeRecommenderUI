@@ -36,6 +36,10 @@ input {
   border: 0px;
 }
 
+input:invalid {
+  border: 1px solid #fb6767;
+}
+
 a {
   font: inherit;
 }

@@ -14,3 +14,17 @@ export function get(path, queryParam) {
     });
 
 }
+
+export function post(path, queryBody) {
+    const body = JSON.stringify(queryBody);
+    console.log(body)
+    return fetch(`${RECIPE_API_BASE_URL}/${path}`, {
+        method: 'POST',
+        headers: {
+            Origin: 'http://localhost:3000',
+            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Content-Type': 'application/json'
+        },
+        body: body
+    });
+}
