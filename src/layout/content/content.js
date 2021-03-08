@@ -18,10 +18,11 @@ function MainContent(props) {
   const path = decidePath(params);
   const [recipes, searchParams, performSearch] = useRecipeSearch(path, params);
 
+  function submitNewRecipe(recipeName, ingredientsList) {
+    console.log(recipeName, ingredientsList)
+  }
 
   function search(searchParam, searchMode) {
-    console.log(searchMode)
-    console.log(searchParam)
     if (searchMode === 'group')
       return searchGroup(searchParam);
     else
@@ -81,7 +82,7 @@ function MainContent(props) {
             <RecipeList />
           </Route>
           <Route path="/AddRecipe">
-            <NewRecipe />
+            <NewRecipe submitNewRecipe={submitNewRecipe}/>
           </Route>
           <Route path="/SearchGroup">
             <RecipeGroup />

@@ -22,7 +22,7 @@ function RecipeSummary(props) {
                 <div className="recipe-item-summary-container">
                     <div className="recipe-item-detail">
                         <div className="recipe-item-summary-item-container">
-                            <img src={img_address} className="recipe-item-img" alt="Recipe Imagr"/>
+                            <img src={img_address} className="recipe-item-img" alt="Recipe Image"/>
                         </div>
                         <Popup
                             trigger={

@@ -27,11 +27,11 @@
 }
 
 .recipe-item-summary-item-container {
-    width: 100%;
+    /* width: 100%; */
     height: 20vh;
     position: absolute;
-    top: 0;
-    left: 0;
+    /* top: 0;
+    left: 0; */
 }
 /* .recipe-item-img:hover {
     opacity: .2;
@@ -40,6 +40,7 @@
 
 .recipe-item-detail-item-container-hallow {
     /* border: 1px solid; */
+    width: 100%;
     height: 20vh;
     display: flex;
     justify-content: center;
