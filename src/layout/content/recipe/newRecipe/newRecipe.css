@@ -2,7 +2,7 @@
     height: 20px;
     border-radius: 5px;
     border: 1px solid rgb(132, 190, 238);
-    width: 17vw;    
+    width: 17vw;
     font-size: calc(10px + .5vmin);
     color: rgb(39, 38, 38);
 }
@@ -24,20 +24,20 @@
 
 .new-recipe-img-container-container {
     position: relative;
-    height: 25vh;
-    width: 20vw;
+    height: 15vh;
+    width: 10vw;
 }
 
 .new-recipe-img-container {
     width: 100%;
-    height: 25vh;
+    height: 15vh;
     position: absolute;
     left: 0;
 }
 
 .new-recipe-img-container-hallow {
     width: 100%;
-    height: 25vh;
+    height: 15vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,21 +69,21 @@
 
 .new-recipe-input-recipe-img-container-container {
     width: 20vw;
-    height: 25vh;
+    height: 15vh;
     /* margin-left: 30px; */
     border: 1px solid;
 }
 
 .new-recipe-input-recipe-img {
     width: 19vw;
-    height: 25vh;
+    height: 15vh;
     clear: both;
     border-radius: 15px;
     border: 1px solid;
 }
 
 .new-recipe-img-div-container {
-    width: 30vw;
+    width: 15vw;
 }
 
 .new-recipe-img-container-hallow:hover {
@@ -143,15 +143,15 @@ input[type="file"] {
 .new-recipe-file-upload {
     cursor: pointer;
     width: 100%;
-    height: 25vh;
+    height: 15vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .new-recipe-img {
-    width: 20vw;
-    height: 25vh;
+    width: 10vw;
+    height: 15vh;
     clear: both;
     border-radius: 15px;
 }
@@ -161,4 +161,25 @@ input[type="file"] {
     font-size: calc(10px + .8vmin);
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.new-recipe-category-checkbox-container {
+    margin-right: 15px;
+}
+
+.new-recipe-category-checkbox-container > label {
+    font-size: calc(10px + .5vmin);
+    color: rgb(39, 38, 38);
+}
+
+.new-recipe-category-checkbox-container > input{
+    border-radius: 5px;
+    border: 1px solid rgb(132, 190, 238);
+}
+
+.new-recipe-title {
+    color: #329a25;
+    font-size: calc(10px + .8vmin);
+    font-weight: bold;
+    margin-right: 10px;
 }

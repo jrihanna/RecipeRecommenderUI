@@ -10,6 +10,7 @@ function NewRecipe(props) {
     const [instructions, setInstructions] = useState("");
     const [iconSrc, setIconSrc] = useState("");
     const [ingredientsList, setIngredientsList] = useState([]);
+    const [category, setCategory] = useState([]);
 
     useEffect(()=> {
         setIngredientsList(ingredientsList)
@@ -20,7 +21,7 @@ function NewRecipe(props) {
         const fetchData = async () => {
             try {
                 if(ingredientsList != null && ingredientsList.length > 0) {
-                    const data = {recipeName, ingredients: ingredientsList, instructions, iconSrc}
+                    const data = {recipeName, ingredients: ingredientsList, instructions, iconSrc, category}
                     const rawData = await api.post(RECIPE_ADD_PATH, data);
                     const resp = await rawData.json();
                     console.log(resp)
@@ -44,6 +45,21 @@ function NewRecipe(props) {
         setIngredientsList(updatedList)
     }
 
+    function onCategoryChange(event) {
+        let newCategoryList = category;
+        if(event.target.checked)
+            newCategoryList.push(event.target.value)
+        else{
+            category.find((element,index) =>
+                {
+                    if(element === event.target.value) 
+                        newCategoryList.splice(index, 1)
+                }
+            )
+        }
+        setCategory(newCategoryList)
+    }
+
     return (
         <div>
             <form onSubmit={submitNewRecipe} method="POST">
@@ -65,15 +81,28 @@ function NewRecipe(props) {
                                 placeholder="Recipe Name" name="newRecipeName"
                                 onChange={(event) => setRecipeName(event.target.value)}/>
                         </div>
+                        <br/>
                         <div>
-                            Category:
-                            <select id="category-option" className="new-recipe-input new-recipe-select" required
-                                >
-                                <option>Breakfast</option>
-                                <option>Lunch</option>
-                                <option>Dinner</option>
-                                <option>Snack</option>
-                            </select>
+                            {/*  */}
+                            <div><span className="new-recipe-title ">Category:</span>
+                                <span className="new-recipe-category-checkbox-container">
+                                    <input type="checkbox" id="Breakfast" name="Breakfast" value="BREAKFAST" 
+                                        onClick={onCategoryChange}/>
+                                    <label htmlFor="Breakfast">Breakfast</label>
+                                </span>
+                                <span className="new-recipe-category-checkbox-container">
+                                    <input type="checkbox" id="Lunch" name="Lunch" value="LUNCH" onClick={onCategoryChange}/>
+                                    <label htmlFor="Lunch">Lunch</label>
+                                </span>
+                                <span className="new-recipe-category-checkbox-container">
+                                    <input type="checkbox" id="Dinner" name="Dinner" value="DINNER" onClick={onCategoryChange}/>
+                                    <label htmlFor="Dinner">Dinner</label>
+                                </span>
+                                <span className="new-recipe-category-checkbox-container">
+                                    <input type="checkbox" id="Snack" name="Snack" value="SNACK" onClick={onCategoryChange}/>
+                                    <label htmlFor="Snack">Snack</label>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>

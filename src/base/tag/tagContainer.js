@@ -53,7 +53,7 @@ class TagContainer extends React.Component {
         return (
             <div className={this.state.selectable ? "tag-selectable" : ""}>
                 {
-                    (this.state && this.state.tags) ? this.state.tags.map((tag, index) => {
+                    (this.state && this.state.tags && this.state.tags.map) ? this.state.tags.map((tag, index) => {
                         return (<Tag name={tag.name} key={'tag-' + index} selectable={this.state.selectable} 
                                         onSelect = {(e) => this.toggleSelectTag(tag.name, e)} />);
                     }) : <div>&nbsp;</div>

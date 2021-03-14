@@ -6,7 +6,7 @@ function NewIngredientQuantity(props) {
     const currentId = props.index;
     const [ingredientName, setIngredientName] = useState("");
     const [ingredientAmount, setIngredientAmount] = useState(0);
-    const [measurement, setMeasurement] = useState("Grams");
+    const [measurement, setMeasurement] = useState("gr");
 
     function onRemoveItem() {
         props.onRemoveIngredient(currentId);
@@ -26,10 +26,10 @@ function NewIngredientQuantity(props) {
                 onChange={(event) => setIngredientAmount(event.target.value)} placeholder="Quantity"/>
             <select id="category-option" className="new-recipe-input new-recipe-select" required
                 onChange={(event) => setMeasurement(event.target.value)}>
-                <option>Grams</option>
-                <option>Tablespoon</option>
-                <option>Teaspoon</option>
-                <option>Each</option>
+                <option>gr</option>
+                <option>tbsp</option>
+                <option>tsp</option>
+                <option></option>
             </select>
             <img src={Minus} alt="remove" className="new-recipe-ingredient-remove-img" onClick={onRemoveItem}/>
         </div>

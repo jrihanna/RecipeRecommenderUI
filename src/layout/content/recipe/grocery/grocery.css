@@ -1,0 +1,53 @@
+.grocery-list-container-container {
+    width: 40vw;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.grocery-list-container {
+}
+
+.grocery-item-icon {
+    width: 10vw;
+    height: 10vh;
+}
+
+.grocery-item-container {
+    display: flex;
+}
+
+.grocery-item-table {
+    /* border: 1px solid; */
+    width: 95%;
+}
+
+/* .grocery-item-table > tbody > tr> td {
+    border: 1px solid;
+} */
+
+.grocery-item-cell-icon {
+    width: 20%;
+    border-bottom: 1px solid rgb(109 157 197);
+}
+
+.grocery-item-cell {
+    vertical-align: top;
+    padding-left: 15px;
+    border-bottom: 1px solid rgb(109 157 197);
+}
+
+  @media print {
+    html, body {
+      height: initial !important;
+      overflow: initial !important;
+      -webkit-print-color-adjust: exact;
+    }
+  }
+  
+  @media print {
+    .page-break {
+      margin-top: 1rem;
+      display: block;
+      page-break-before: auto;
+    }
+  }

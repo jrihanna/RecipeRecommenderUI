@@ -10,7 +10,7 @@ export function useRecipeSearch(path, crit) {
         const fetchData = async () => {
             try {
                 if(searchParams != null) {
-                    const rawData = await api.get(path, searchParams.searchParam);
+                    const rawData = await api.get(path, searchParams.searchParam, true);
                     const resp = await rawData.json();
                     setRecipes(resp.recipes);
                 }
