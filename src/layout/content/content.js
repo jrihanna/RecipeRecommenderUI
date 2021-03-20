@@ -53,6 +53,8 @@ function MainContent(props) {
     for (var a in searchParam.nutritions) {
       searchURL += `&${a}=${searchParam.nutritions[a]}`;
     }
+
+    console.log(searchURL)
     history.push(searchURL);
     performSearch({ searchParam });
   }

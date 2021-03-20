@@ -4,6 +4,8 @@ import * as api from './api';
 export function useRecipeSearch(path, crit) {
     const [recipes, setRecipes] = useState([]);
     const [searchParams, setSearchParams] = useState(crit);
+    console.log("useRecipeSearch")
+    console.log(path)
 
     useEffect(() => {
         setRecipes([]);

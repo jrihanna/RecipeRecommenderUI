@@ -10,16 +10,27 @@ function Search(props) {
   const [singleListSearch, setSingleListSearch] = useState({
     recipeName: '', includedIngredients: [],
     excludedIngredients: [], tags: [],
-    nutritions: [], category: ""
+    minCalory: 0, maxCalory: 0, minCarb: 0, maxCarb: 0, minFat: 0, maxFat: 0,
+    category: ""
   });
-  const [groupSearch, setGroupSearch] = useState({ numWeeks: 1, excludedIngredients: [], tags: [], nutritions: [] });
+  const [groupSearch, setGroupSearch] = useState({ numWeeks: 1, 
+    excludedIngredients: [], 
+    tags: [],
+    minCalory: 0, maxCalory: 0, minCarb: 0, maxCarb: 0, minFat: 0, maxFat: 0,
+  });
 
 
   function setGroupSearchNutritionalValues(params) {
-    setGroupSearch({ ...groupSearch, nutritions: params });
+    setGroupSearch({ ...groupSearch, 
+      minCalory: params.minCalory, maxCalory: params.maxCalory, 
+      minCarb: params.minCarb, maxCarb: params.maxCarb, 
+      minFat: params.minFat, maxFat: params.maxFat  });
   }
   function setListSearchNutritionalValues(params) {
-    setSingleListSearch({ ...singleListSearch, nutritions: params });
+    setSingleListSearch({ ...singleListSearch, 
+      minCalory: params.minCalory, maxCalory: params.maxCalory, 
+      minCarb: params.minCarb, maxCarb: params.maxCarb, 
+      minFat: params.minFat, maxFat: params.maxFat });
   }
 
   function handleListTagClick(selectedTags) {
@@ -31,6 +42,7 @@ function Search(props) {
   }
 
   function handleSingleSubmit(event) {
+    console.log(singleListSearch)
     if (typeof props.search === 'function') {
       props.search(singleListSearch, 'list');
     }
@@ -38,7 +50,7 @@ function Search(props) {
   }
 
   function handleGroupSubmit(event) {
-    console.log(groupSearch)
+    // console.log(groupSearch)
     if (typeof props.search === 'function') {
       props.search(groupSearch, 'group');
     }
@@ -110,8 +122,8 @@ function Search(props) {
           triggerOpenedClassName="search-trigger search-header-open" open>
           <div className="search-body-section">
             <form onSubmit={handleGroupSubmit}>
-              <br />
-              <section>
+              {/* <br /> */}
+              {/* <section>
                 <div>
                   <label>How many weeks do you want to plan for?
                     <select id="num-weeks-option" className="search-input num-weeks-select" onChange={(event) => setGroupSearch({ ...groupSearch, numWeeks: event.target.value })}>
@@ -123,7 +135,7 @@ function Search(props) {
                   </label>
                 </div>
               </section>
-              <br />
+              <br /> */}
               <section>
                 {/* <div>
             <label>

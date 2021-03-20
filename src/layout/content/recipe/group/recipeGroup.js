@@ -2,10 +2,14 @@ import React from "react";
 import Popup from 'reactjs-popup';
 import Collapsible from 'react-collapsible';
 import RecipeSummary from "../../../../base/recipeSummary";
-import './recipeGroup.css';
+import * as api from '../../../../base/api/api';
+import { RECIPE_GROUP_DOWNLOAD_PDF_PATH } from '../../../../base/api/config';
 import Grocery from "../grocery/grocery";
+import './recipeGroup.css';
 
 function RecipeGroup(props) {
+
+    const linkRef = React.createRef();
     const daysInWeek = [1, 2, 3, 4, 5, 6, 7];
 
     function getRecipeIds() {
@@ -14,6 +18,28 @@ function RecipeGroup(props) {
             ids.push(i.id);
 
         return ids;
+    }
+
+    function downloadRecipesPdf(){
+        const a = linkRef.current;
+        const fetchData = async () => {
+            try {
+                // const data = 'recipeIds=' + recipeIds.join(",");
+                const data = {"recipePerDay": {"1":[33, 33]}}
+                const rawData = await api.post(RECIPE_GROUP_DOWNLOAD_PDF_PATH, data, linkRef);
+                const blob = await rawData.blob();
+                const href = window.URL.createObjectURL(blob);
+                
+                a.download = 'Recipes_For_This_Week.pdf';
+                a.href = href;
+                a.click();
+                a.href = '';
+            }
+            catch (e) {
+                console.log(e);
+            }
+        };
+        fetchData();
     }
 
     return (
@@ -33,7 +59,9 @@ function RecipeGroup(props) {
                     )}
                 </Popup>
                 
-                <button className="recipe-group-button recipe-group-download-button">Download PDF</button>
+                <button className="recipe-group-button recipe-group-download-button"
+                        onClick={downloadRecipesPdf}>Download PDF</button>
+                        <a ref={linkRef}/>
             </div>
             {props.recipes ? props.recipes.map((recipe, index) => {
                 return (

@@ -6,13 +6,13 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
-    "html2canvas": "^1.0.0-rc.7",
     "query-string": "^6.13.8",
     "react": "^17.0.1",
     "react-collapsible": "^2.8.3",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-to-print": "^2.12.3",
     "reactjs-popup": "^2.0.4",
     "use-react-router": "^1.0.7",
     "web-vitals": "^0.2.4"
@@ -22,12 +22,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [

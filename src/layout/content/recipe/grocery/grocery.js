@@ -15,7 +15,8 @@ function Grocery(props) {
         const fetchData = async () => {
             try {
                 const data = 'recipeIds=' + recipeIds.join(",");
-                const rawData = await api.get(RECIPE_GROCERY_PATH, data, false);
+                // const data = {1: [{'recipeName': 'Cashew'}]}
+                const rawData = await api.get(RECIPE_GROCERY_PATH, data, true);
                 const resp = await rawData.json();
                 let items = []
 
