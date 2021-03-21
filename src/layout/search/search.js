@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Collapsible from 'react-collapsible';
 import Nutrition from '../../base/nutrition';
 import TagContainer from '../../base/tag/tagContainer';
+import IngredientAutoComplete from './ingredientAutocomplete';
 import './search.css';
 
 function Search(props) {
@@ -18,6 +19,7 @@ function Search(props) {
     tags: [],
     minCalory: 0, maxCalory: 0, minCarb: 0, maxCarb: 0, minFat: 0, maxFat: 0,
   });
+  
 
 
   function setGroupSearchNutritionalValues(params) {
@@ -26,6 +28,7 @@ function Search(props) {
       minCarb: params.minCarb, maxCarb: params.maxCarb, 
       minFat: params.minFat, maxFat: params.maxFat  });
   }
+
   function setListSearchNutritionalValues(params) {
     setSingleListSearch({ ...singleListSearch, 
       minCalory: params.minCalory, maxCalory: params.maxCalory, 
@@ -61,7 +64,7 @@ function Search(props) {
     <div className="search-container">
       <div>
         <Collapsible trigger="Search single recipe" triggerTagName="div" triggerClassName="search-trigger"
-          triggerOpenedClassName="search-trigger search-header-open">
+          triggerOpenedClassName="search-trigger search-header-open" open>
           <div className="search-body-section">
             <form onSubmit={handleSingleSubmit}>
               <div>
@@ -72,9 +75,10 @@ function Search(props) {
               <br />
               <div>
                 <label>
+                  <IngredientAutoComplete />
                   Include ingredients:
-                    <input type="text" id="ingredient-include-single-input" className="search-input search-input-normal-text"
-                    onChange={(event) => setSingleListSearch({ ...singleListSearch, includedIngredients: event.target.value })} />
+                    {/* <input type="text" id="ingredient-include-single-input" className="search-input search-input-normal-text"
+                    onChange={(event) => setSingleListSearch({ ...singleListSearch, includedIngredients: event.target.value })} /> */}
                 </label>
                 <div>List of selected Ingredients</div>
               </div>
