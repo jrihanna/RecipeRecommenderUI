@@ -75,8 +75,8 @@ function Search(props) {
               <br />
               <div>
                 <label>
-                  <IngredientAutoComplete />
                   Include ingredients:
+                  <IngredientAutoComplete />
                     {/* <input type="text" id="ingredient-include-single-input" className="search-input search-input-normal-text"
                     onChange={(event) => setSingleListSearch({ ...singleListSearch, includedIngredients: event.target.value })} /> */}
                 </label>
