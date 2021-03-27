@@ -59,7 +59,7 @@ class IngredientAutoComplete extends React.Component {
   onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
     let currentIngredients = this.state.selectedIngredients;
     const index = currentIngredients.length + 1;
-    currentIngredients.push(<SelectedIngredient key={this.props.compId + "selected-ingredient" + index} 
+    currentIngredients.push(<SelectedIngredient key={this.props.compId + "-selected-ingredient-" + index} 
               ingredient={suggestion} removeIngredient={(event)=>this.onRemoveIngredient(event, index)} />);
     this.setState({selectedIngredients: currentIngredients});
     this.setState({
@@ -93,6 +93,7 @@ class IngredientAutoComplete extends React.Component {
       <div>
         <div>
           <Autosuggest 
+            id={this.props.compId + "-autocomplete"}
             suggestions={suggestions}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             onSuggestionsClearRequested={this.onSuggestionsClearRequested}

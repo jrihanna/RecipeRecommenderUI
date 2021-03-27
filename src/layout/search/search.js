@@ -37,8 +37,15 @@ function Search(props) {
   }
 
   function handleIncludeIngredientList(selectedIngredients) {
-    console.log(selectedIngredients)
     setSingleListSearch({ ...singleListSearch, includedIngredients: selectedIngredients })
+  }
+
+  function handleExcludeIngredientList(selectedIngredients) {
+    setSingleListSearch({ ...singleListSearch, excludedIngredients: selectedIngredients })
+  }
+
+  function handleExcludeIngredientGroup(selectedIngredients) {
+    setGroupSearch({ ...groupSearch, excludedIngredients: selectedIngredients })
   }
 
   function handleListTagClick(selectedTags) {
@@ -90,15 +97,16 @@ function Search(props) {
               <div>
                 <label>
                   Exclude ingredients:
-                    <input type="text" id="ingredient-exclude-single-input" className="search-input search-input-normal-text"
-                    onChange={(event) => setSingleListSearch({ ...singleListSearch, excludedIngredients: event.target.value })} />
+                  <IngredientAutoComplete compId="list-exclude" handleIngredientChange={handleExcludeIngredientList}/>
+                    {/* <input type="text" id="ingredient-exclude-single-input" className="search-input search-input-normal-text"
+                    onChange={(event) => setSingleListSearch({ ...singleListSearch, excludedIngredients: event.target.value })} /> */}
                 </label>
-                <div>List of selected Ingredients</div>
               </div>
               <br />
               <div>
                 <label>Category:
                     <select id="category-option" className="search-input category-select" onChange={(event) => setSingleListSearch({ ...singleListSearch, category: event.target.value })}>
+                    <option></option>
                     <option>Breakfast</option>
                     <option>Lunch</option>
                     <option>Dinner</option>
@@ -156,9 +164,9 @@ function Search(props) {
                 <div>
                   <label>
                     Exclude ingredients:
-                    <input type="text" id="ingredient-exclude-group-input" className="search-input search-input-normal-text" />
+                    <IngredientAutoComplete compId="list-exclude" handleIngredientChange={handleExcludeIngredientGroup}/>
                   </label>
-                  <div>List of selected Ingredients</div>
+                  {/* <div>List of selected Ingredients</div> */}
                 </div>
               </section>
               <br />
