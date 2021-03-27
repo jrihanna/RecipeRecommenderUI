@@ -1,5 +1,5 @@
 import React from 'react';
-import RecipeSummary from '../../../base/recipeSummary';
+import RecipeSummary from '../../../base/recipe/recipeSummary';
 import './recipeContent.css';
 
 function RecipeList(props) {

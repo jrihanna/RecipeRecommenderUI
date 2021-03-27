@@ -1,10 +1,10 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import RecipeDetail from '../layout/content/recipe/recipeDetail';
+import RecipeDetail from '../../layout/content/recipe/recipeDetail';
 import OtherDetails from './otherDetails';
 import './recipeSummary.css';
-import './modal.css';
-import ImageNotFound from '../local_img/img_placeholder2.png';
+import '../modal.css';
+import ImageNotFound from '../../local_img/img_placeholder2.png';
 
 function RecipeSummary(props) {
     const otherDetails = [{'name': 'Cooking Time', 'value': '26 min'}, 

@@ -4,8 +4,6 @@ import {RECIPE_API_BASE_URL} from './config';
 export function get(path, queryParam, doStringify) {
     const query = doStringify ? queryString.stringify(queryParam) : queryParam;
 
-    console.log(query)
-
     return fetch(`${RECIPE_API_BASE_URL}/${path}?${query}`, {
         headers: {
             // Authorization: 'Basic dXNlcjoxMjM=',

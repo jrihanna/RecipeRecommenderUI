@@ -2,7 +2,7 @@ import React from 'react';
 import './recipeDetail.css';
 import Nutrition from '../../../base/nutrition';
 import IngredientsList from './ingredientsList';
-import OtherDetails from "../../../base/otherDetails";
+import OtherDetails from "../../../base/recipe/otherDetails";
 import Tag from '../../../base/tag/tag';
 
 function RecipeDetail(props) {

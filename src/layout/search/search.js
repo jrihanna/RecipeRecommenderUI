@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Collapsible from 'react-collapsible';
 import Nutrition from '../../base/nutrition';
 import TagContainer from '../../base/tag/tagContainer';
-import IngredientAutoComplete from './ingredientAutocomplete';
+import IngredientAutoComplete from '../../base/ingredient/ingredientAutocomplete';
 import './search.css';
 
 function Search(props) {
@@ -34,6 +34,11 @@ function Search(props) {
       minCalory: params.minCalory, maxCalory: params.maxCalory, 
       minCarb: params.minCarb, maxCarb: params.maxCarb, 
       minFat: params.minFat, maxFat: params.maxFat });
+  }
+
+  function handleIncludeIngredientList(selectedIngredients) {
+    console.log(selectedIngredients)
+    setSingleListSearch({ ...singleListSearch, includedIngredients: selectedIngredients })
   }
 
   function handleListTagClick(selectedTags) {
@@ -76,11 +81,10 @@ function Search(props) {
               <div>
                 <label>
                   Include ingredients:
-                  <IngredientAutoComplete />
+                  <IngredientAutoComplete compId="list-include" handleIngredientChange={handleIncludeIngredientList}/>
                     {/* <input type="text" id="ingredient-include-single-input" className="search-input search-input-normal-text"
                     onChange={(event) => setSingleListSearch({ ...singleListSearch, includedIngredients: event.target.value })} /> */}
                 </label>
-                <div>List of selected Ingredients</div>
               </div>
               <br />
               <div>

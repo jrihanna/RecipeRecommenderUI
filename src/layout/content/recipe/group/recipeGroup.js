@@ -1,7 +1,7 @@
 import React from "react";
 import Popup from 'reactjs-popup';
 import Collapsible from 'react-collapsible';
-import RecipeSummary from "../../../../base/recipeSummary";
+import RecipeSummary from "../../../../base/recipe/recipeSummary";
 import * as api from '../../../../base/api/api';
 import { RECIPE_GROUP_DOWNLOAD_PDF_PATH } from '../../../../base/api/config';
 import Grocery from "../grocery/grocery";
