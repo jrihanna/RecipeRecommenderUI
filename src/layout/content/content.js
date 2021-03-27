@@ -8,6 +8,7 @@ import NewRecipe from './recipe/newRecipe/newRecipe';
 import Search from '../../layout/search/search';
 import { RECIPE_SEARCH_LIST_PATH, RECIPE_SEARCH_GROUP_PATH } from '../../base/api/config';
 import './content.css';
+import NewIngredient from './ingredient/newIngredient';
 
 function MainContent(props) {
   function Home() {
@@ -53,8 +54,6 @@ function MainContent(props) {
     for (var a in searchParam.nutritions) {
       searchURL += `&${a}=${searchParam.nutritions[a]}`;
     }
-
-    console.log(searchURL)
     history.push(searchURL);
     performSearch({ searchParam });
   }
@@ -85,6 +84,9 @@ function MainContent(props) {
           </Route>
           <Route path="/AddRecipe">
             <NewRecipe submitNewRecipe={submitNewRecipe}/>
+          </Route>
+          <Route path="/AddIngredient">
+            <NewIngredient submitNewRecipe={submitNewRecipe}/>
           </Route>
           <Route path="/SearchGroup">
             <RecipeGroup />

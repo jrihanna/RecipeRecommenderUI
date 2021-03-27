@@ -1,0 +1,44 @@
+.new-ingredient-container {
+    font-size: calc(10px + .7vmin);
+}
+
+.new-ingredient-input {
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(132, 190, 238);
+    /* margin: 5px; */
+}
+
+.new-ingredient-input-normal-text {
+    width: 17vw;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.measurement-type-select {
+    height: 22px;
+    font: inherit;
+    margin: 5px;
+}
+
+.new-ingredient-input-normal-number {
+    width: 10vw;
+}
+
+
+.new-ingredient-button-container {
+    text-align: right;
+}
+
+.new-ingredient-button {
+    border: 1px solid;
+    border-radius: 8px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.new-ingredient-submit-button {
+    color: white;
+    background-color: rgb(46 119 46);
+    width: 8vw;
+}

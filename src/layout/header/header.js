@@ -16,8 +16,9 @@ function Header(props) {
             </div> */}
       <div className="menu-container">
         <Menu>
-          <Link to="/Recipes" className="menu-link"><MenuItem title="Recipes" /></Link>
+          {/* <Link to="/Recipes" className="menu-link"><MenuItem title="Recipes" /></Link> */}
           <Link to="/AddRecipe" className="menu-link"><MenuItem title="Add your recipe" /></Link>
+          <Link to="/AddIngredient" className="menu-link"><MenuItem title="Add an ingredient" /></Link>
           {/* <Link to="/Ingredients" className="menu-link"><MenuItem title="Ingredients" /></Link> */}
           <Link to="/About" className="menu-link"><MenuItem title="About" /></Link>
         </Menu>
