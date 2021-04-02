@@ -15,10 +15,10 @@
     margin-bottom: 3px;
 }
 
-.measurement-type-select {
-    height: 22px;
+.new-ingredient-select {
     font: inherit;
-    margin: 5px;
+    margin-top: 5px;
+    height: 25px;
 }
 
 .new-ingredient-input-normal-number {

@@ -1,6 +1,5 @@
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
-import SelectedIngredient from './selectedIngredient';
 import * as api from '../api/api';
 import {INGREDIENT_AUTOCOMPLETE} from '../api/config';
 import './ingredientAutocomplete.css';
@@ -16,15 +15,15 @@ function renderSuggestion(suggestion) {
   );
 }
 
-class IngredientAutoComplete extends React.Component {
+class IngredientAutoCompleteSingle extends React.Component {
   constructor() {
     super();
 
     this.state = {
       value: '',
       suggestions: [],
-      selectedIngredients: [],
-      selectedIngredientNames: []
+      selectedIngredient: '',
+      selectedIngredientName: ''
     };
     
     this.lastRequestId = null;
@@ -45,41 +44,47 @@ class IngredientAutoComplete extends React.Component {
         const data = { 'ingName': inputValue }
         api.get(INGREDIENT_AUTOCOMPLETE, data, true)
           .then(response => response.json())
-          .then(data => this.setState({ suggestions: data }))
+          .then(data => {
+                if(data === null || data.length === 0){
+                    // console.log(inputValue)
+                    // this.setState({ suggestions: [inputValue] })
+                    const selectedIngredient = {name: inputValue, nutritionalValue: {}}
+                    this.props.handleIngredientChange(selectedIngredient);
+                }
+                else
+                    this.setState({ suggestions: data })
+            })
       }
     }
   }
 
   onSuggestionsClearRequested = () => {
     this.setState({
-      suggestions: []
+      suggestions: ''
     });
   };
 
   onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
-    let currentIngredients = this.state.selectedIngredients;
-    const index = currentIngredients.length + 1;
-    currentIngredients.push(<SelectedIngredient key={this.props.compId + "-selected-ingredient-" + index} 
-              ingredient={suggestion} removeIngredient={(event)=>this.onRemoveIngredient(event, index)} />);
-    this.setState({selectedIngredients: currentIngredients});
-    this.setState({
-      suggestions: [],
-      value: ''
-    });
-    let currentIngredientNames = this.state.selectedIngredientNames;
-    currentIngredientNames.push(suggestion.name);
-    this.setState({selectedIngredientNames: currentIngredientNames});
-    this.props.handleIngredientChange(currentIngredientNames);
+    // let currentIngredients = this.state.selectedIngredient;
+    // const index = currentIngredients.length + 1;
+    // currentIngredients.push(<SelectedIngredient key={this.props.compId + "-selected-ingredient-" + index} 
+    //           ingredient={suggestion} removeIngredient={(event)=>this.onRemoveIngredient(event, index)} />);
+    // this.props.addIngredientToList();
+    this.setState({selectedIngredient: suggestion});
+    // let currentIngredientNames = this.state.selectedIngredientNames;
+    // currentIngredientNames.push(suggestion.name);
+    // this.setState({selectedIngredientNames: currentIngredientNames});
+    this.props.handleIngredientChange(suggestion);
     
   }
 
-  onRemoveIngredient = (event, ingredientIndex) => {
-    const newList = this.state.selectedIngredients.splice(ingredientIndex, 1);
-    const newNameList = this.state.selectedIngredientNames.splice(ingredientIndex, 1);
-    this.setState({selectedIngredients: newList});
-    this.setState({selectedIngredientNames: newNameList});
-    this.props.handleIngredientChange(newNameList);
-  }
+//   onRemoveIngredient = (event, ingredientIndex) => {
+//     const newList = this.state.selectedIngredients.splice(ingredientIndex, 1);
+//     const newNameList = this.state.selectedIngredientNames.splice(ingredientIndex, 1);
+//     this.setState({selectedIngredients: newList});
+//     this.setState({selectedIngredientName: newNameList});
+//     this.props.handleIngredientChange(newNameList);
+//   }
 
   render() {
     const { value, suggestions,selectedIngredients } = this.state;
@@ -110,4 +115,4 @@ class IngredientAutoComplete extends React.Component {
   }
 }
 
-export default IngredientAutoComplete;
+export default IngredientAutoCompleteSingle;

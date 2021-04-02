@@ -4,20 +4,20 @@ import { useState } from 'react';
 import Collapsible from 'react-collapsible';
 import Nutrition from '../../base/nutrition';
 import TagContainer from '../../base/tag/tagContainer';
-import IngredientAutoComplete from '../../base/ingredient/ingredientAutocomplete';
+import IngredientAutocompleteMulti from '../../base/ingredient/ingredientAutocompleteMulti';
 import './search.css';
 
 function Search(props) {
   const [singleListSearch, setSingleListSearch] = useState({
     recipeName: '', includedIngredients: [],
     excludedIngredients: [], tags: [],
-    minCalory: 0, maxCalory: 0, minCarb: 0, maxCarb: 0, minFat: 0, maxFat: 0,
+    minCalory: 0, maxCalory: 0, minCarb: 0, maxCarb: 0, minFat: 0, maxFat: 0, minProtein: 0, maxProtein: 0,
     category: ""
   });
   const [groupSearch, setGroupSearch] = useState({ numWeeks: 1, 
     excludedIngredients: [], 
     tags: [],
-    minCalory: 0, maxCalory: 0, minCarb: 0, maxCarb: 0, minFat: 0, maxFat: 0,
+    minCalory: 0, maxCalory: 0, minCarb: 0, maxCarb: 0, minFat: 0, maxFat: 0, minProtein: 0, maxProtein: 0
   });
   
 
@@ -88,7 +88,7 @@ function Search(props) {
               <div>
                 <label>
                   Include ingredients:
-                  <IngredientAutoComplete compId="list-include" handleIngredientChange={handleIncludeIngredientList}/>
+                  <IngredientAutocompleteMulti compId="list-include" handleIngredientChange={handleIncludeIngredientList}/>
                     {/* <input type="text" id="ingredient-include-single-input" className="search-input search-input-normal-text"
                     onChange={(event) => setSingleListSearch({ ...singleListSearch, includedIngredients: event.target.value })} /> */}
                 </label>
@@ -97,7 +97,7 @@ function Search(props) {
               <div>
                 <label>
                   Exclude ingredients:
-                  <IngredientAutoComplete compId="list-exclude" handleIngredientChange={handleExcludeIngredientList}/>
+                  <IngredientAutocompleteMulti compId="list-exclude" handleIngredientChange={handleExcludeIngredientList}/>
                     {/* <input type="text" id="ingredient-exclude-single-input" className="search-input search-input-normal-text"
                     onChange={(event) => setSingleListSearch({ ...singleListSearch, excludedIngredients: event.target.value })} /> */}
                 </label>
@@ -120,6 +120,7 @@ function Search(props) {
                   minCaloryInputId="cal-single-min-input" maxCaloryInputId="cal-single-max-input"
                   minCarbInputId="carb-single-min-input" maxCarbInputId="carb-single-max-input"
                   minFatInputId="fat-single-min-input" maxFatInputId="fat-single-max-input"
+                  minProteinInputId="protein-single-min-input" maxProteinInputId="protein-single-max-input"
                   handleChange={setListSearchNutritionalValues} />
               </div>
               <br />
@@ -164,7 +165,7 @@ function Search(props) {
                 <div>
                   <label>
                     Exclude ingredients:
-                    <IngredientAutoComplete compId="list-exclude" handleIngredientChange={handleExcludeIngredientGroup}/>
+                    <IngredientAutocompleteMulti compId="list-exclude" handleIngredientChange={handleExcludeIngredientGroup}/>
                   </label>
                   {/* <div>List of selected Ingredients</div> */}
                 </div>
@@ -175,7 +176,8 @@ function Search(props) {
                   <Nutrition minMax inputClassName="search-input input-min-max" handleChange={setGroupSearchNutritionalValues}
                     minCaloryInputId="cal-group-min-input" maxCaloryInputId="cal-group-max-input"
                     minCarbInputId="carb-group-min-input" maxCarbInputId="carb-group-max-input"
-                    minFatInputId="fat-group-min-input" maxFatInputId="fat-group-max-input" />
+                    minFatInputId="fat-group-min-input" maxFatInputId="fat-group-max-input"
+                    minProteinInputId="protein-group-min-input" maxProteinInputId="protein-group-max-input" />
                 </div>
               </section>
               <br />

@@ -35,12 +35,21 @@ function Nutrition(props) {
                         <td><input type="number" className={props.inputClassName} id={props.maxFatInputId} placeholder="Max"
                                 onChange={(event) => setNutritionValues({...nutritionValues, maxFat: event.target.value})} /></td>
                     </tr>
+                    <tr>
+                        <td>Protein*:</td>
+                        <td><input type="number" className={props.inputClassName} id={props.minProteinInputId} placeholder="Min"
+                                onChange={(event) => setNutritionValues({...nutritionValues, minFat: event.target.value})} /></td>
+                        <td>-</td>
+                        <td><input type="number" className={props.inputClassName} id={props.maxProteinInputId} placeholder="Max"
+                                onChange={(event) => setNutritionValues({...nutritionValues, maxProtein: event.target.value})} /></td>
+                    </tr>
                     <tr><td colSpan="2">*per day</td></tr>
                 </tbody>) :
                 (<tbody>
                     <tr><td>Calories:</td><td>{props.nutrition.calory}</td></tr>
                     <tr><td>Carbs:</td><td>{props.nutrition.carbs + 'gr'}</td></tr>
                     <tr><td>Fat:</td><td>{props.nutrition.fat + 'gr'}</td></tr>
+                    <tr><td>Protein:</td><td>{props.nutrition.protein + 'gr'}</td></tr>
                 </tbody>)
             }
         </table>

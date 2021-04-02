@@ -5,3 +5,4 @@ export const RECIPE_ADD_PATH = "recipe/add";
 export const RECIPE_GROCERY_PATH = "recipe/grocery";
 export const RECIPE_GROUP_DOWNLOAD_PDF_PATH = "recipe/pdf";
 export const INGREDIENT_AUTOCOMPLETE = "ingredient/autocomplete";
+export const INGREDIENT_ADD_PATH = "ingredient/add";
