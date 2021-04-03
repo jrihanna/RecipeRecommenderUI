@@ -112,3 +112,15 @@ a {
   font-size: 20px;
 }
 
+.popup-success {
+  background-color: rgba(212, 245, 252, 0.815);
+  min-width: 300px;
+  min-height: 50px;
+  margin: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}
