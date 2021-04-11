@@ -12,7 +12,7 @@ function Nutrition(props) {
             {props.minMax ?
                 (<tbody>
                     <tr>
-                        <td>Calories*:</td>
+                        <td>Calories:</td>
                         <td><input type="number" className={props.inputClassName} id={props.minCaloryInputId} placeholder="Min"
                                 onChange={(event) => setNutritionValues({...nutritionValues, minCalory: event.target.value})} /></td>
                         <td>-</td>
@@ -20,7 +20,7 @@ function Nutrition(props) {
                                 onChange={(event) => setNutritionValues({...nutritionValues, maxCalory: event.target.value})} /></td>
                     </tr>
                     <tr>
-                        <td>Carbs*:</td>
+                        <td>Carbs:</td>
                         <td><input type="number" className={props.inputClassName} id={props.minCarbInputId} placeholder="Min"
                                 onChange={(event) => setNutritionValues({...nutritionValues, minCarb: event.target.value})} /></td>
                         <td>-</td>
@@ -28,7 +28,7 @@ function Nutrition(props) {
                                 onChange={(event) => setNutritionValues({...nutritionValues, maxCarb: event.target.value})} /></td>
                     </tr>
                     <tr>
-                        <td>Fat*:</td>
+                        <td>Fat:</td>
                         <td><input type="number" className={props.inputClassName} id={props.minFatInputId} placeholder="Min"
                                 onChange={(event) => setNutritionValues({...nutritionValues, minFat: event.target.value})} /></td>
                         <td>-</td>
@@ -36,14 +36,13 @@ function Nutrition(props) {
                                 onChange={(event) => setNutritionValues({...nutritionValues, maxFat: event.target.value})} /></td>
                     </tr>
                     <tr>
-                        <td>Protein*:</td>
+                        <td>Protein:</td>
                         <td><input type="number" className={props.inputClassName} id={props.minProteinInputId} placeholder="Min"
                                 onChange={(event) => setNutritionValues({...nutritionValues, minFat: event.target.value})} /></td>
                         <td>-</td>
                         <td><input type="number" className={props.inputClassName} id={props.maxProteinInputId} placeholder="Max"
                                 onChange={(event) => setNutritionValues({...nutritionValues, maxProtein: event.target.value})} /></td>
                     </tr>
-                    <tr><td colSpan="2">*per day</td></tr>
                 </tbody>) :
                 (<tbody>
                     <tr><td>Calories:</td><td>{props.nutrition.calory}</td></tr>

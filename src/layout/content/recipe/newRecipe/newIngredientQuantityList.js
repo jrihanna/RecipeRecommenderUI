@@ -78,7 +78,7 @@ function NewIngredientQuantityList(props) {
             {newIngredientComponentList}
             <button onClick={addIngredient} className="new-recipe-button new-recipe-ingredient-add-button">
                 <img src={Plus} alt="add another" />&nbsp;
-                Add Another
+                Add Another Ingredient
             </button>
         </div>
     );

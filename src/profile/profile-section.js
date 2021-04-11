@@ -1,28 +1,22 @@
 import './profile.css';
-import pic from '../img/profile.png'
+import { useAuth0 } from "@auth0/auth0-react";
+import pic from '../local_img/profile.png'
 
 function ProfileSection(props) {
+  const { user, isAuthenticated, isLoading, loginWithRedirect, logout } = useAuth0();
 
-  const isLogggedIn = true;//props.isLoggedIn;
-  if (isLogggedIn) {
+  if (isAuthenticated ) {
     return (
       <div className="profile-main">
-        <img src={pic} className="profile-img" alt="logo" />
-        <div className="logout-link"><a href="">Log out</a></div>
+        <img src={user.picture} className="profile-img" alt="logo" />
+        <button onClick={() => logout()} className="profile-button">Logout</button></div>
         
-        {/* <div className="profile-name">your name</div> */}
-      </div>
     );
   }
   else {
     return (
-      <div className="profile-main not-logged">
-        <span className="logged-span">
-        <a href="" onClick="return false;">Login</a>
-        </span>
-        <span className="logged-span">
-        <a href="" onClick="return false;">Sign up</a>
-        </span>
+      <div className="profile-not-logged-main">
+        <button onClick={() => loginWithRedirect()} className="profile-button">Login</button>
       </div>
     );
   }

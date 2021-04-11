@@ -1,11 +1,18 @@
 .profile-main {
-    background-color: #fdea80;
     height: inherit;
-    vertical-align: top;
     color: black;
-    font-size: calc(10px + .5vmin);
-    padding: 5px;
-    border: 1px solid;
+    font-size: calc(10px + .25vmin);
+    padding: 2px;
+    text-align: center;
+}
+
+.profile-not-logged-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    font-size: calc(10px + 1vmin);
+    font-weight: bolder;
 }
 
 .not-logged {
@@ -17,20 +24,15 @@
 .profile-img {
     height: 7vh;
     width: 5vw;
-    float: left;
-    margin: 5px;
-    /* border: 1px solid; */
+    border-radius: 30px;
 }
 
 .profile-name {
     font-size: inherit;
-    /* font-size: 10px; */
     height: inherit;
     float: left;
     display: flex;
     align-items: center;
-    margin: 5px;
-    /* border: 1px solid; */
 }
 
 .logout-link {
@@ -43,4 +45,15 @@
 
 .logged-span {
     padding: 5px;
+}
+
+.profile-button {
+    border: none;
+    border-radius: 2px;
+    height: 20px;
+    color: white;
+    background-color: inherit;
+    cursor: pointer;
+    font: inherit;
+    text-decoration: underline;
 }

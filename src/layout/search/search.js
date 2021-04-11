@@ -76,7 +76,7 @@ function Search(props) {
     <div className="search-container">
       <div>
         <Collapsible trigger="Search single recipe" triggerTagName="div" triggerClassName="search-trigger"
-          triggerOpenedClassName="search-trigger search-header-open" open>
+          triggerOpenedClassName="search-trigger search-header-open">
           <div className="search-body-section">
             <form onSubmit={handleSingleSubmit}>
               <div>
